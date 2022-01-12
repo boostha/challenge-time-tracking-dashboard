@@ -1,0 +1,231 @@
+:root {
+  --step--2: clamp(0.78rem, 0.55rem + 0.99vw, 1.44rem);
+  --step--1: clamp(0.94rem, 0.63rem + 1.30vw, 1.80rem);
+  --step-0: clamp(1.13rem, 0.73rem + 1.69vw, 2.25rem);
+  --step-1: clamp(1.35rem, 0.84rem + 2.20vw, 2.81rem);
+  --step-2: clamp(1.62rem, 0.95rem + 2.85vw, 3.52rem);
+  --step-3: clamp(1.94rem, 1.08rem + 3.68vw, 4.39rem);
+  --step-4: clamp(2.33rem, 1.22rem + 4.75vw, 5.49rem);
+  --step-5: clamp(2.80rem, 1.37rem + 6.11vw, 6.87rem);
+
+  --profile-blue: hsl(246, 80%, 60%);
+  --work-orange: hsl(15, 100%, 70%);
+  --play-blue: hsl(195, 74%, 62%);
+  --study-red: hsl(348, 100%, 68%);
+  --exercise-green: hsl(145, 58%, 55%);
+  --social-purple: hsl(264, 64%, 52%);
+  --self-yellow: hsl(43, 84%, 65%);
+
+  --dark-blue: hsl(226, 43%, 10%);
+  --blue: hsl(235, 46%, 20%);
+  --desat-blue: hsl(235, 100%, 66%);
+  --pale-blue: hsl(236, 100%, 87%);
+  }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: var(--step-4);
+  font-weight: 400;
+  color: white;
+}
+
+h2 {
+  font-size: var(--step-2);
+  font-weight: 300;
+  color: white;
+}
+
+h3 {
+  font-size: var(--step-0);
+  font-weight: 500;
+  color: white;
+}
+
+p, li, a {
+  font-size: var(--step--2);
+  list-style: none;
+  text-decoration: none;
+  color: var(--pale-blue);
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--dark-blue);
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin: auto;
+  padding: 5rem;
+}
+
+
+
+/* individual cards */
+
+.main-card {
+  aspect-ratio: 1 / 2;
+  grid-row: span 2;
+  grid-column: span 1;
+  background-color: var(--blue);
+  border-radius: 20px;
+}
+
+.profile-card {
+  min-height: 70%;
+  background-color: var(--desat-blue);
+  border-radius: 20px;
+  padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.select-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+}
+
+.profile-card img {
+  box-shadow: 0 0 0 4px white;
+  border-radius: 99px;
+}
+
+.ind-card {
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.ind-card svg {
+  position: absolute;
+  top: -3px;
+  right: 20px;
+}
+
+.ind-card-info {
+  background-color: var(--blue);
+  border-radius: 10px;
+  padding: 2rem;
+
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 85%;
+
+  cursor: pointer;
+}
+
+.ind-card-info .dots {
+  top: 45px;
+  right: 30px;
+}
+
+.ind-card-progress {
+  padding: 2rem 0;
+}
+
+.work {
+  background-color: var(--work-orange);
+}
+
+.play {
+  background-color: var(--play-blue);
+}
+
+.study {
+  background-color: var(--study-red);
+}
+
+.exercise {
+  background-color: var(--exercise-green);
+}
+
+.social {
+  background-color: var(--social-purple);
+}
+
+.care {
+  background-color: var(--self-yellow);
+}
+
+.active {
+  color: white;
+  font-weight: 500;
+}
+
+.select-info-item {
+  cursor: pointer;
+}
+
+.select-info-item:hover {
+  color:var(--desat-blue);
+}
+
+.ind-card-info:hover {
+  background-color: var(--desat-blue);
+}
+
+@media screen and (max-width: 850px) {
+  .card-container {
+    padding: 2rem;
+  }
+
+  .profile-card {
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .profile-card img {
+    width: 20%;
+    height: 20%;
+    object-fit: cover;
+  }
+
+  .select-info {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .select-info-item {
+    font-size: 1.2rem;
+  }
+
+  .main-card {
+    aspect-ratio: 2 / 1;
+  }
+
+  .ind-card {
+    aspect-ratio: 2 / 1;
+  }
+
+  .ind-card-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .ind-card-info {
+    padding: 1.5rem 2rem;
+  }
+}
