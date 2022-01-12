@@ -115,7 +115,7 @@ for (let i = 0; i < cardInfo.length; i++) {
   <h3>${importedData[i].title}</h3>
   <div class="ind-card-progress">
     <h1>${importedData[i].timeframes.daily.current}hrs</h1>
-    <p>Last Week: ${importedData[i].timeframes.daily.previous}hrs</p>
+    <p>Yesterday: ${importedData[i].timeframes.daily.previous}hrs</p>
   </div>
 `
 }
@@ -137,7 +137,7 @@ daily.addEventListener('click', () => {
     <h3>${importedData[i].title}</h3>
     <div class="ind-card-progress">
       <h1>${importedData[i].timeframes.daily.current}hrs</h1>
-      <p>Last Week: ${importedData[i].timeframes.daily.previous}hrs</p>
+      <p>Yesterday: ${importedData[i].timeframes.daily.previous}hrs</p>
     </div>
   `
   }
@@ -163,7 +163,7 @@ monthly.addEventListener('click', () => {
     <h3>${importedData[i].title}</h3>
     <div class="ind-card-progress">
       <h1>${importedData[i].timeframes.monthly.current}hrs</h1>
-      <p>Last Week: ${importedData[i].timeframes.monthly.previous}hrs</p>
+      <p>Last Month: ${importedData[i].timeframes.monthly.previous}hrs</p>
     </div>
   `
   }
